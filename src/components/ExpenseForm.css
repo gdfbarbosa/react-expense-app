@@ -24,3 +24,11 @@
 .new-expense__actions {
   text-align: right;
 }
+
+.cancel-btn {
+  background-color: red !important;
+}
+
+.confirm-btn {
+  background-color: #40005d;
+}
