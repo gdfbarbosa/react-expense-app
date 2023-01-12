@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import ExpenseList from "./components/ExpenseList";
 import NewExpense from "./components/NewExpense";
+import Expenses from "./components/Expenses";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
-      //expenses.push(expense);
       return [expense, ...prevExpenses];
     });
   };
@@ -18,7 +17,7 @@ const App = () => {
       <header className="App-header">
         <h1>Personal Expense Tracker</h1>
         <NewExpense onAddExpense={addExpenseHandler} />
-        <ExpenseList expenses={expenses} />
+        <Expenses expenses={expenses} />
       </header>
     </div>
   );
