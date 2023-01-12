@@ -24,7 +24,11 @@ const ExpenseForm = (props) => {
   };
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onSaveExpenseData({ ...userInput, date: new Date(userInput.date) });
+    props.onSaveExpenseData({
+      ...userInput,
+      value: +userInput.value,
+      date: new Date(userInput.date),
+    });
     setUserInput((prevState) => {
       return { ...userInput, title: "", value: "", date: "" };
     });
